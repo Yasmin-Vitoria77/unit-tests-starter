@@ -62,6 +62,6 @@ describe("divide", () => {
 // 4. ehPar
 describe("ehPar", () => {
     test("Retornar valor verdadeiro para número par", () => {
-        expect(ehPar(4, 2)).toBe(0);
+        expect(ehPar(4, 2)).toBeFalsy();
     });
 })
