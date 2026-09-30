@@ -52,16 +52,14 @@ describe("divide", () => {
         expect(divide(42, 7)).toBe(6);
     });
 
-    // ARRUMAR ! - Não funciona
     test("Lançar erro de divisão por 0", () => {
-        expect(() => divide(4, 0)).toThrow('Nao e possivel efetuar divisao por 0');
-    //  expect(() => divide(10, 0)).toThrow('Nao e possivel dividir por zero');  
+        expect(() => divide(4, 0)).toThrow('Nao e possivel dividir por zero'); 
     });
 })
 
-// 4. ehPar
+//4. ehPar
 describe("ehPar", () => {
     test("Retornar valor verdadeiro para número par", () => {
-        expect(ehPar(4, 2)).toBeFalsy();
+        expect(ehPar(2)).toBeTruthy();
     });
 })
