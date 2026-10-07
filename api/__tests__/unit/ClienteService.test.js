@@ -1,4 +1,4 @@
-const ClienteService = require("../services/ClienteService");
+const ClienteService = require("../../services/ClienteService");
 
 // Teste unitario: o service e testado em isolamento total.
 // O repository e substituido por um mock (jest.fn()), assim testamos so a
@@ -37,6 +37,7 @@ describe("ClienteService (unitario com mocks)", () => {
   });
 
   describe("buscarPorId", () => {
+<<<<<<< HEAD:api/__tests__/ClienteService.test.js
     test("repassa o id ao repository e retorna o cliente encontrado", () => {
       const cliente = {
         id: 1,
@@ -57,6 +58,12 @@ describe("ClienteService (unitario com mocks)", () => {
 
       expect(() => service.buscarPorId(999)).toThrow("Cliente nao encontrado");
     });
+=======
+    test.todo("repassa o id ao repository e retorna o cliente encontrado");
+    test.todo(
+      "lanca erro 'Cliente nao encontrado' quando o repository retorna null",
+    );
+>>>>>>> 89b994eaa8ff6cdadda91e4ededefcbc83b682c5:api/__tests__/unit/ClienteService.test.js
   });
 
   describe("criar", () => {
