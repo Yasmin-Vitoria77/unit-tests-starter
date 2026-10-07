@@ -2,13 +2,13 @@ import { test, expect } from "@playwright/test";
 
                         // local e rota
 test.beforeEach(async ({ page, request }) => {
-    const resposta = await request.post("http://localhost:3000:__reset"); // Vai iniciar e excluir anterior
+    const resposta = await request.post("http://localhost:3000/__reset"); // Vai iniciar e excluir anterior
     expect(resposta.status()).toBe(204); // Verificar a resposta
     await page.goto("/");                //"Go to"
 }); 
 
 test("Lista os produtos iniciais", async ({page}) => {
-    await expect(page.getByRole("heading", {name: "Produtos"})).toBeVisible(); //elemento do h1 ao h6
+    await expect(page.getByRole("heading", {name: "Produto"})).toBeVisible(); //elemento do h1 ao h6
     await expect(page.getByRole("row")).toHaveCount(4);
     await expect(page.getByRole("cell", { name: "Coxinha "})).toBeVisible()
 });
@@ -20,7 +20,7 @@ test("Cadastra um produto novo", async ({page}) => {
 
     const linha = page.getByRole("row", { name: /Kibe/ });
     await expect(linha).toBeVisible();
-    await expect(linha).toContainText("R$7,00")
+    await expect(linha).toContainText("R$ 7,00")
 });
 
 test("Mostra erro ao cadastrar sem preenchimento", async ({page}) => {
