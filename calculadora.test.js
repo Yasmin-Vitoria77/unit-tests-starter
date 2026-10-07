@@ -62,4 +62,27 @@ describe("ehPar", () => {
     test("Retornar valor verdadeiro para número par", () => {
         expect(ehPar(2)).toBeTruthy();
     });
-})
+
+    test("Retornar valor falso para número ímpar", () =>{
+         expect(ehPar(5)).toBeFalsy(); 
+    });
+});
+
+//5. Media
+describe("media", () => {
+    test("Calcular corretamente a média de números inteiros", () => {
+        expect(media([2, 4, 6, 8])).toBe(5);
+    });
+
+    test("Calcular a média de números que derão decimal", () => {
+        expect(media([5, 6])).toBeCloseTo(5.5); 
+    });
+
+    test("Lançar erro quando a lista estiver vazia", () => {
+        expect( () => media([])).toThrow("A lista de numeros nao pode ser vazia");
+    });
+
+    test("Lançar erro quando a lista não for um array", () => {
+        expect( () => media("2, 4, 6")).toThrow("A lista de numeros nao pode ser vazia")
+    });
+});
